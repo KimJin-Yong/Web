@@ -9,19 +9,21 @@ body {
 }
 
 header {
-  padding: 20px;
+  padding: 15px;
   background: #40A2D8;
-  height: 30px;
+  height: 55px;
 }
 
 .sidebar {
-  width: 160px;
+  width: 200px;
   background: #40A2D8;
-  position: absolute;
-  height: 95vh;
-  padding: 0 30px;
+  position: fixed;
+  height: 70vh;
+  margin-top: 20px;
+  padding: 0 0;
   left: -100%;
   transition: all 0.3s;
+  border-radius: 0 5px 5px 0;
 }
 
 .sidebar.active {
@@ -29,16 +31,17 @@ header {
 }
 
 .logo {
+  margin-top: 15px;
   width: 50px;
 }
 
 ul {
-  padding: 0;
+  padding: 5px;
 }
 
 ul li {
   list-style-type: none;
-  margin: 8px 0;
+  margin: 8px -5px;
 }
 
 ul li a {
@@ -46,8 +49,8 @@ ul li a {
   text-decoration: none;
   font-size: 16px;
   display: block;
-  padding: 5px 10px;
-  border-radius: 6px;
+  padding: 5px;
+  border-radius: 0;
 }
 
 ul li a:hover,
@@ -61,10 +64,39 @@ header svg {
 }
 
 .main {
-  height: 90vh;
+  height: 85vh;
   display: flex;
-  justify-content: center;
-  align-items: top;
-  font-size: 15px;
+  padding-left: 200px;
+  flex-direction: column; /* 자식 요소들을 수직(열) 방향으로 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: top; /* 수직 정렬 */
   color: #40A2D8;
+}
+
+.horizontal-list {
+  list-style: none; /* 기본 목록 스타일 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+  display: flex; /* Flexbox 사용 */
+  flex-direction: row; /* 항목을 행 방향으로 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+}
+
+.horizontal-list li {
+  margin-right: 20px; /* 항목 사이 간격 조정 */
+}
+
+/* 마지막 항목의 오른쪽 여백을 제거합니다. */
+.horizontal-list li:last-child {
+  margin-right: 0;
+}
+
+.nav li {
+  padding: 0 15px;
+}
+
+.search-box {
+  height: 30px;
+  width: 300px;
+  padding: 10px;
+  border: 1px;
 }

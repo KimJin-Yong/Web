@@ -1,12 +1,20 @@
-const Home = () => {
-    
-    return <div>
-        <li>
-            <a>
-                
-            </a>
-        </li>
-    </div>
-}
+import React from "react";
+import UploadForm from './components/UploadForm';
+import ImageReturn from './components/ImageReturn';
 
-export default Home;
+const Main = () => {
+  return (
+    <React.Fragment>
+      <div className='main'>
+        <UploadForm />
+        <ul className='horizontal-list'>
+          <li><ImageReturn /></li>
+          <li><ImageReturn /></li>
+          <li><ImageReturn /></li>
+        </ul>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Main;

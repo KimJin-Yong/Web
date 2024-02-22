@@ -61,7 +61,6 @@ async def get_image(img_name: str = '1163.jpg'):
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 
-# img_directory = "archive/images"
 # @app.get(f"/get_image/{img_name}")
 # async def get_image():
 #     image_path = os.path.join(img_directory, img_name)

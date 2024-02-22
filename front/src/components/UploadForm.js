@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FaCamera } from "react-icons/fa";
 import './UploadForm.css';
+import '../App.css';
 
 const UploadForm = () => {
   const [text, setText] = useState('');
@@ -41,13 +42,15 @@ const UploadForm = () => {
   };
 
   return (
-    <div>
-      <button
-        onClick={() => {
-          document.getElementById('file').click();
-        }}>
-        <FaCamera />
-      </button>
+    <div className='horizontal-list'>
+      <li>
+        <button
+          onClick={() => {
+            document.getElementById('file').click();
+          }} className='btn btn-primary'>
+          <FaCamera />
+        </button>
+      </li>
       <input
         type="file"
         id="file"
@@ -55,12 +58,14 @@ const UploadForm = () => {
         onChange={handleFileChange}
         className="file-input"
       />
-      <div>
+      <li>
         <textarea className="inputField" id="text" value={text} onChange={handleTextChange} />
-      </div>
-      <form onSubmit={handleSubmit}>
-        <button type="submit" disabled={!text && !selectedFile}>Upload</button>
-      </form>
+      </li>
+      <li>
+        <form onSubmit={handleSubmit}>
+          <button type="submit" className='btn btn-primary' disabled={!text && !selectedFile}>Upload</button>
+        </form>
+      </li>
     </div>
   );
 };
