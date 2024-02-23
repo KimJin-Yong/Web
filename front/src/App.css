@@ -100,3 +100,7 @@ header svg {
   padding: 10px;
   border: 1px;
 }
+
+.item {
+  margin-top: 30px;
+}

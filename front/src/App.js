@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ImageReturn from './components/ImageReturn';
+// import ImageReturn from './components/ImageReturn';
 
 import NavBar from './components/NavBar';
 import UploadForm from './components/UploadForm';
@@ -31,7 +31,6 @@ function App() {
       <NavBar show={showNav} />
       <div className='main'>
         <UploadForm className='search-box'/>
-        <ImageReturn />
 
         <Item name='Galaxy S 24' price='120만원' url='https://images.samsung.com/sec/smartphones/galaxy-s24/images/galaxy-s24-highlights-comparison-mo.jpg?imbypass=true'/>
         <Item name='Galaxy S 24' price='120만원' url='https://images.samsung.com/sec/smartphones/galaxy-s24/images/galaxy-s24-highlights-comparison-mo.jpg?imbypass=true'/>
