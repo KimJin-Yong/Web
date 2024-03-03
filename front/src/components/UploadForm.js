@@ -7,8 +7,10 @@ import '../App.css';
 const UploadForm = () => {
   const [text, setText] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
+
   const [uploadedText, setUploadedText] = useState('');
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [uploadedAttribute, setUpAttribute] = useState('');
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -27,7 +29,7 @@ const UploadForm = () => {
       if (selectedFile) {
         formData.append('file', selectedFile);
       }
-
+      console.log(formData);
       const response = await axios.post('http://localhost:8000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -35,6 +37,7 @@ const UploadForm = () => {
       });
       setUploadedText(response.data.txt);
       setUploadedImage(`data:image/jpeg;base64,${response.data.img}`);
+      setUpAttribute(response.data.att)
 
       setText('');
       setSelectedFile(null);
@@ -76,6 +79,7 @@ const UploadForm = () => {
         <div className='response-container'>
           <p>{uploadedText}</p>
           <img src={uploadedImage} className='response-image' alt="Uploaded" />
+          <p>{uploadedAttribute}</p>
         </div>
       )}
     </div>

@@ -10,12 +10,12 @@ import UploadForm from './components/UploadForm';
 
 function Item(props) {
   return (
-    <div class="card">
-      <img src={props.url} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{props.name}</h5>
-        <p class="card-text">{props.price}</p>
-        <a href="/" class="btn btn-primary">Go somewhere</a>
+    <div className="card">
+      <img src={props.url} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{props.name}</h5>
+        <p className="card-text">{props.price}</p>
+        <a href="/" className="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   )
@@ -25,11 +25,9 @@ function App() {
   const [showNav, setShowNav] = useState(true)
   return (
     <div className="App">
-      <header>
-        <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
-      </header>
+      <GiHamburgerMenu className='menu' onClick={() => setShowNav(!showNav)} />
       <NavBar show={showNav} />
-      <div className='main'>
+      <div className='main' >
         <UploadForm className='search-box'/>
 
         <Item name='Galaxy S 24' price='120만원' url='https://images.samsung.com/sec/smartphones/galaxy-s24/images/galaxy-s24-highlights-comparison-mo.jpg?imbypass=true'/>

@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse, Response
 from typing import Optional
-
+import json
 import os
 import shutil
 import base64
@@ -39,8 +39,8 @@ async def upload(
         
         # 파일 업로드 필드가 있는 경우에는 이미지를 이미지 파일에 저장
         else:
-            print(file)
             image_path = os.path.join(UPLOAD_DIRECTORY, file.filename)
+            print(file.filename)
             with open(image_path, "wb") as image_file:
                 shutil.copyfileobj(file.file, image_file)
                 
@@ -57,6 +57,15 @@ async def upload(
             # URL이 아닌 파일시스템 내부의 이미지를 반환하기 위해 64byte 인코드
             encode_img = base64.b64encode(img_file.read()).decode('utf-8')
         
+        # iid = return_img_name.split('.')[0]
+        # keys = df[0].split(',')
+        # with open('archive/styles.csv', 'r') as f:
+        #     df = f.readlines()
+        # for data in df:
+        #     temp = data.split(',')
+        #     if iid == temp[0]:
+        #         att = json.dumps({keys[i].strip('\n'): temp[i].strip('\n') for i in range(len(keys))})
+        # return JSONResponse(content={"img": encode_img, "txt": return_txt, "att": att})
         return JSONResponse(content={"img": encode_img, "txt": return_txt})
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})

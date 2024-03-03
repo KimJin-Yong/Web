@@ -8,17 +8,17 @@ body {
   color: #0B60B0;
 }
 
-header {
-  padding: 15px;
-  background: #40A2D8;
-  height: 55px;
+.menu {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 30px;
 }
 
 .sidebar {
-  width: 200px;
+  width: 170px;
   background: #40A2D8;
   position: fixed;
-  height: 70vh;
+  height: 100vh;
   margin-top: 20px;
   padding: 0 0;
   left: -100%;
@@ -67,6 +67,7 @@ header svg {
   height: 85vh;
   display: flex;
   padding-left: 200px;
+  padding-right: 30px;
   flex-direction: column; /* 자식 요소들을 수직(열) 방향으로 정렬 */
   align-items: center; /* 수평 중앙 정렬 */
   justify-content: top; /* 수직 정렬 */
